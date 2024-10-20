@@ -11,19 +11,20 @@
 // people.push("Gal");
 // console.log(people);
 // 4
-// console.log(people[0]);
+// console.log(people.indexOf("Mary"));
 // 5
-// var newList = people.slice(1);
-// console.log(newList1);
+// const newList = people.slice(2, -1);
+// console.log(newList);
 // 6 ? 
+// const foo = people.indexOf("Foo");
+// console.log(foo);
+// console.log(people);
 // 7
-// let last = [people[people.length - 1]];
-
+// const last = [people[people.length - 1]];
 // console.log(last);
 // part 2.1
 // for (let i = 0; i < people.length; i++) {
-//     console.log(people[i])
-
+//     console.log(people[i]);
 // }
 // part 2.2
 // for (let i = 0; i < people.length; i++) {
@@ -36,25 +37,37 @@
 
 
 // Exercise 2 : Your favorite colors
-// const colors = ['red','blue','yellow','green','purple'];
+// const colors = ["blue", "red", "green", "yellow", "purple"];
+// const suffixes = ["st", "nd", "rd", "th", "th"]; // Include 'th' for 4th and 5th as placeholders
 
 // for (let i = 0; i < colors.length; i++) {
-//     console.log(`My #${i+1} Choice is:` + colors[i]);
+//     // Choose the correct suffix, defaulting to 'th' for numbers beyond the 3rd
+//     let suffix = suffixes[(i < 3) ? i : 3];
+//     console.log(`My ${i + 1}${suffix} choice is ${colors[i]}`);
 // }
 
 // 🌟 Exercise 3 : Repeat the question
-// let user_choice;
-// let number;
+// const readline = require('readline');
 
-// do {
-//     user_choice = prompt("Please enter a number:");
-//     number = Number(user_choice);
-//     if (isNaN(number)) {
-//         console.log("That's not a valid number. Please try again.");
-//     }
-// } while (isNaN(number) || number < 10);
+// const rl = readline.createInterface({
+//     input: process.stdin,
+//     output: process.stdout
+// });
 
-// console.log("You entered a valid number:", number);
+// function askForNumber() {
+//     rl.question('Enter a number: ', (answer) => {
+//         const number = parseInt(answer);
+//         if (typeof number === 'number' && number < 10) {
+//             console.log(`You entered: ${number}`);
+//             askForNumber(); // Continue asking if the number is less than 10
+//         } else {
+//             console.log('Number is 10 or higher. Exiting...');
+//             rl.close();
+//         }
+//     });
+// }
+
+// askForNumber();
 
 
 // 🌟 Exercise 4 : Building Management
@@ -117,3 +130,24 @@ const building = {
 // for (let key in family) {
 //     console.log(family[key]);
 // }
+
+// Exercise 6 : Rudolf
+// const details = {
+//     my: 'name',
+//     is: 'Rudolf',
+//     the: 'reindeer'
+//   }
+
+// for (let key in details) {
+//     console.log(key);
+//     console.log(details[key]);
+// }
+
+// Exercise 7 : Secret Group
+const names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"];
+const firstLetters = names.map(name => name[0]);
+firstLetters.sort();
+console.log(firstLetters); 
+
+
+
